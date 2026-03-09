@@ -11,15 +11,16 @@
     h2 { text-align: center; margin-bottom: 20px; font-size: 18px; }
     .field { margin-bottom: 14px; }
     label { display: block; margin-bottom: 5px; font-size: 14px; font-weight: 600; }
-    input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
+    input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; background: #fff; color: #111; }
     button { width: 100%; padding: 14px; margin-top: 8px; background: #2481cc; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
     button:active { opacity: 0.8; }
-    #result { display: none; margin-top: 20px; padding: 14px; background: #fff; border-radius: 10px; border: 1px solid #ddd;  color: #111; }
-    #result h3 { color: #2481cc; margin-bottom: 10px; font-size: 15px; }
+    #result { display: none; margin-top: 20px; padding: 14px; background: #1e1e1e; border-radius: 10px; border: 1px solid #444; }
+    #result h3 { color: #5cb3ff; margin-bottom: 10px; font-size: 15px; }
     #result ul { padding-left: 18px; }
-    #result li { margin-bottom: 6px; font-size: 15px;  color: #111; }
-    .note { color: #e65c00; font-size: 13px; margin-top: 10px; }
-    .error { color: red; font-weight: bold; }
+    #result li { margin-bottom: 6px; font-size: 15px; color: #ffffff; }
+    #result li b { color: #ffffff; }
+    .note { color: #ffaa44; font-size: 13px; margin-top: 10px; }
+    .error { color: #ff5555; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -63,7 +64,7 @@
       if (narrow) { html += '<h3>&#128208; Ширина узкая</h3><ul>'; for (var i=0; i<narrow.length; i++) html += '<li><b>'+narrow[i][0]+'</b> = '+narrow[i][1]+' мм</li>'; html += '</ul>'; }
       if (wide) { html += '<h3>&#128208; Ширина широкая</h3><ul>'; for (var j=0; j<wide.length; j++) html += '<li><b>'+wide[j][0]+'</b> = '+wide[j][1]+' мм</li>'; html += '</ul>'; }
       for (var k=0; k<notes.length; k++) html += '<p class="note">'+notes[k]+'</p>';
-      if (!narrow && !wide) html = '<p class="error">Размеры вне допустимого диапазона. Проверь W и H.</p>';
+      if (!narrow && !wide) html = '<p class="error">Размеры вне допустимого диапазона.</p>';
       div.innerHTML = html;
     }
   </script>
