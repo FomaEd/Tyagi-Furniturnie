@@ -1,6 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-const token = '7987954302:AAFG1Tt9GwcPMl11pi3TVBUo1AqN-pdoyuU';
+const token = '7987954302:AAFG1Tt9GwcPM111pi3TVBUo1AqN-pdoyuU';
 
 const bot = new TelegramBot(token, { polling: true });
 
@@ -17,7 +17,7 @@ bot.onText(/\/start/, (msg) => {
             {
               text: 'Открыть калькулятор',
               web_app: {
-                url: 'https://example.com/mini-app' // позже сюда поставим реальный URL mini-app
+                url: 'https://fomaed.github.io/kng-tyagi/'
               }
             }
           ]
