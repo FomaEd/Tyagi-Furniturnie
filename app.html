@@ -184,102 +184,11 @@
         }
       }
 
-      // Скрытые 180° — общий принцип для всех редукторов
+      // Скрытые 180° — два L3* сразу после L2, без дубляжа
       if (hinges === 'hidden180') {
         // Узкая створка
         if (W >= 445 && W <= 700 && H <= 3000) {
-          narrow = [
-            ['L1', HC - c1],
-            ['L2', H - HC - c1]
-          ];
-
-          // базовый L3: для всех трёх редукторов одинаковая формула по текущим данным
           var baseNarrowL3 = W - 410;
-          narrow.push(['L3', baseNarrowL3]);
 
-          if (H < 2400) {
-            narrow.push(['L4', H - 180]);
-          } else {
-            narrow.push(['L4*', Math.round(H / 2) - 180]);
-          }
-
-          // ДВА отдельных значения L3* с комментариями H13 / H14
-          narrow.push([
-            'L3*',
-            baseNarrowL3 + ' — Поворотно-откидной режим (H13)'
-          ]);
-          narrow.push([
-            'L3*',
-            (baseNarrowL3 + 215) + ' — Откидно-поворотный: доп. тяга = 215 мм (H14)'
-          ]);
-        }
-
-        // Широкая створка
-        if (W >= 701 && W <= 1600 && H <= 3000) {
-          wide = [
-            ['L1', HC - c1],
-            ['L2', H - HC - c1]
-          ];
-
-          var baseWideL3;
-
-          // По таблицам для всех трёх редукторов логика одинаковая:
-          if (W <= 1200) {
-            baseWideL3 = W - 528;
-            wide.push(['L3', baseWideL3]);
-          } else {
-            baseWideL3 = W - 688;
-            wide.push(['L3*', baseWideL3]);
-          }
-
-          if (H < 2400) {
-            wide.push(['L4', Math.round(H / 2) - 180]);
-          } else {
-            wide.push(['L4*', Math.round(H / 3) - 180]);
-          }
-
-          wide.push(['L5', W - 250]);
-
-          // ДВА значения L3* с комментариями H13 / H14
-          wide.push([
-            'L3*',
-            baseWideL3 + ' — Поворотно-откидной режим (H13)'
-          ]);
-          wide.push([
-            'L3*',
-            (baseWideL3 + 215) + ' — Откидно-поворотный: доп. тяга = 215 мм (H14)'
-          ]);
-        }
-      }
-
-      // Формирование HTML
-      if (narrow) {
-        html += '<h3>&#128208; Ширина узкая</h3><ul>';
-        for (var i = 0; i < narrow.length; i++) {
-          html += '<li><b>' + narrow[i][0] + '</b> = ' + narrow[i][1] + ' мм</li>';
-        }
-        html += '</ul>';
-      }
-
-      if (wide) {
-        html += '<h3>&#128208; Ширина широкая</h3><ul>';
-        for (var j = 0; j < wide.length; j++) {
-          html += '<li><b>' + wide[j][0] + '</b> = ' + wide[j][1] + ' мм</li>';
-        }
-        html += '</ul>';
-      }
-
-      // notes оставляем на будущее, сейчас для скрытых 180° они не используются
-      for (var k = 0; k < notes.length; k++) {
-        html += '<p class="note">' + notes[k] + '</p>';
-      }
-
-      if (!narrow && !wide) {
-        html = '<p class="error">Размеры вне допустимого диапазона.</p>';
-      }
-
-      div.innerHTML = html;
-    }
-  </script>
-</body>
-</html>
+          narrow = [
+            ['L1', HC
