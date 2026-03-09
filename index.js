@@ -17,7 +17,7 @@ bot.onText(/\/start/, (msg) => {
             {
               text: 'Открыть калькулятор',
               web_app: {
-                            url: 'https://fomaed.github.io/kng-tyagi/?v=2'
+                                        url: 'https://fomaed.github.io/kng-tyagi/calc.html'
               }
             }
           ]
