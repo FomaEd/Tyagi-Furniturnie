@@ -9,7 +9,7 @@ bot.onText(/\/start/, (msg) => {
 
   bot.sendMessage(
     chatId,
-    'Привет! Это калькулятор фурнитурных тяг. Нажми кнопку ниже, чтобы открыть мини-приложение.',
+    'Привет! Это калькулятор фурнитурных тяг KNG. Нажми кнопку ниже, чтобы открыть мини-приложение.',
     {
       reply_markup: {
         keyboard: [
@@ -17,7 +17,7 @@ bot.onText(/\/start/, (msg) => {
             {
               text: 'Открыть калькулятор',
               web_app: {
-                url: 'https://example.com/mini-app' // позже сюда поставим реальный URL mini-app
+                                                    url: 'https://fomaed.github.io/kng-tyagi/app.html'
               }
             }
           ]
