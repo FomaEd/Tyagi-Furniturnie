@@ -197,17 +197,21 @@
       // Скрытые 180°
       if (hinges === 'hidden180') {
         var l2Offset;
+        var c1hidden180;
         if (reducer === 'vilka') {
-          l2Offset = 170;
+          c1hidden180 = 228;
+          l2Offset = 208;
         } else if (reducer === 'torx') {
+          c1hidden180 = c1;
           l2Offset = 205;
         } else if (reducer === '4gran') {
+          c1hidden180 = c1;
           l2Offset = 228;
         }
 
         if (W >= 445 && W <= 700 && H <= 3000) {
           narrow = [
-            ['L1', HC - c1],
+            ['L1', HC - c1hidden180],
             ['L2', H - HC - l2Offset],
             ['L3', W - 410]
           ];
@@ -221,7 +225,7 @@
 
         if (W >= 701 && W <= 1600 && H <= 3000) {
           wide = [
-            ['L1', HC - c1],
+            ['L1', HC - c1hidden180],
             ['L2', H - HC - l2Offset]
           ];
 
