@@ -59,22 +59,22 @@
   <h2>&#128296; Расчёт длин тяг</h2>
 
   <div class="field">
-    <label>Ширина створки W (мм)</label>
+    abel>Ширина створки W (мм)</label>
     <input id="W" type="number" inputmode="numeric" placeholder="600" />
   </div>
 
   <div class="field">
-    <label>Высота створки H (мм)</label>
+    abel>Высота створки H (мм)</label>
     <input id="H" type="number" inputmode="numeric" placeholder="2000" />
   </div>
 
   <div class="field">
-    <label>Высота ручки HC (мм)</label>
+    abel>Высота ручки HC (мм)</label>
     <input id="HC" type="number" inputmode="numeric" placeholder="900" />
   </div>
 
   <div class="field">
-    <label>Тип редуктора</label>
+    abel>Тип редуктора</label>
     <select id="reducer">
       <option value="vilka">Переходник (Вилка)</option>
       <option value="torx">Под TORX штифт</option>
@@ -83,7 +83,7 @@
   </div>
 
   <div class="field">
-    <label>Тип петель</label>
+    abel>Тип петель</label>
     <select id="hinges">
       <option value="visible">Видимые</option>
       <option value="hidden90">Скрытые 90&#176;</option>
@@ -259,7 +259,7 @@
           if (typeof valN === 'number') {
             valN = valN + ' мм';
           }
-          html += '<li><b>' + nameN + '</b> = ' + valN + '</li>';
+          html += '><b>' + nameN + '</b> = ' + valN + '</li>';
         }
         html += '</ul>';
       }
@@ -272,7 +272,7 @@
           if (typeof valW === 'number') {
             valW = valW + ' мм';
           }
-          html += '<li><b>' + nameW + '</b> = ' + valW + '</li>';
+          html += '><b>' + nameW + '</b> = ' + valW + '</li>';
         }
         html += '</ul>';
       }
@@ -287,6 +287,30 @@
       // Для всех типов петель, если H от 1201 до 1800
       if (H >= 1201 && H <= 1800) {
         images.push('img/L2 1200-1800.png');
+      }
+
+      // Для всех типов петель, если H от 1801 до 2400
+      if (H >= 1801 && H <= 2400) {
+        images.push('img/L1 1800-2400.png');
+        images.push('img/L2 1800-2400.png');
+        images.push('img/L4 1800-2400.png');
+      }
+
+      // Для всех типов петель, если H от 2401 до 3000
+      if (H >= 2401 && H <= 3000) {
+        images.push('img/L1 2400-3000.png');
+        images.push('img/L2 2400-3000.png');
+        images.push('img/L4 2400-3000.png');
+      }
+
+      // Для всех типов петель, если W от 1001 до 1200
+      if (W >= 1001 && W <= 1200) {
+        images.push('img/L3 1000-1200.png');
+      }
+
+      // Только для Скрытых 180, если W от 1201 до 1600
+      if (hinges === 'hidden180' && W >= 1201 && W <= 1600) {
+        images.push('img/L3 1200-1600.png');
       }
 
       if (images.length > 0) {
