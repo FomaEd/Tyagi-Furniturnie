@@ -20,7 +20,13 @@ bot.onText(/\/start/, (msg) => {
                                                     url: 'https://fomaed.github.io/kng-tyagi/app.html'
               }
             }
-          ]
+          ],
+              [
+                {
+                  text: '🛠 Техподдержка',
+                  url: 'https://t.me/foma_ed'
+                }
+              ]
         ],
         resize_keyboard: true,
         one_time_keyboard: false
